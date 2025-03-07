@@ -114,7 +114,7 @@ extension ListViewModel {
 
 extension ListViewModel {
     enum Constants {
-        static let defaultSortOption: SortOption = .mostPopular
+        static let defaultSortOption: SortOption = .bestMatch
         static let defaultLimit = 6
     }
 }
