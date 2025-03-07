@@ -22,7 +22,7 @@ final class ListViewModelTests: XCTestCase {
         ]
         
         let mockAPIService = MockAPIService()
-        mockAPIService.response = ProfessionalsResponse(count: 2, offset: 0, limit: 2, professionals: expectedProfessionals)
+        mockAPIService.getProfessionalsResponse = ProfessionalsResponse(count: 2, offset: 0, limit: 2, professionals: expectedProfessionals)
         
         let sut = ListViewModel(apiService: mockAPIService)
         
@@ -80,7 +80,7 @@ final class ListViewModelTests: XCTestCase {
         ]
         
         let mockAPIService = MockAPIService()
-        mockAPIService.response = ProfessionalsResponse(count: 8, offset: 0, limit: 6, professionals: initialProfessionals)
+        mockAPIService.getProfessionalsResponse = ProfessionalsResponse(count: 8, offset: 0, limit: 6, professionals: initialProfessionals)
         
         let sut = ListViewModel(apiService: mockAPIService)
         
@@ -101,7 +101,7 @@ final class ListViewModelTests: XCTestCase {
         
         XCTAssertEqual(sut.professionals.count, 6)
         
-        mockAPIService.response = ProfessionalsResponse(count: 8, offset: 6, limit: 6, professionals: nextPageProfessionals)
+        mockAPIService.getProfessionalsResponse = ProfessionalsResponse(count: 8, offset: 6, limit: 6, professionals: nextPageProfessionals)
         
         let paginationExpectation = self.expectation(description: "Professionals paginated")
         
@@ -127,7 +127,7 @@ final class ListViewModelTests: XCTestCase {
         ]
         
         let mockAPIService = MockAPIService()
-        mockAPIService.response = ProfessionalsResponse(count: 2, offset: 0, limit: 2, professionals: expectedProfessionals)
+        mockAPIService.getProfessionalsResponse = ProfessionalsResponse(count: 2, offset: 0, limit: 2, professionals: expectedProfessionals)
         
         let sut = ListViewModel(apiService: mockAPIService)
         
