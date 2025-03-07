@@ -32,7 +32,10 @@ class ListViewModel: ObservableObject {
     }
     
     func loadProfessionals(sortBy: SortOption? = nil) {
-        guard !isLoading else { return }
+        guard
+            !isLoading,
+            professionals.isEmpty
+        else { return }
         
         isLoading = true
         errorMessage = nil

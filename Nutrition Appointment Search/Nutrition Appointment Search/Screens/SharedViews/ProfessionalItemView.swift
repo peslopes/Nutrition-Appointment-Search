@@ -1,19 +1,11 @@
 import SwiftUI
 
 struct ProfessionalItemView: View {
-    let name: String
-    let imageURL: URL?
-    let rating: Double
-    let languages: [String]
-    let expertises: [String]
-    
-    init(name: String = "", imageURL: URL? = nil, rating: Double = 0.0, languages: [String] = [], expertises: [String] = []) {
-        self.name = name
-        self.imageURL = imageURL
-        self.rating = rating
-        self.languages = languages
-        self.expertises = expertises
-    }
+    @State var name: String = ""
+    @State var imageURL: URL? = nil
+    @State var rating: Double = 0
+    @State var languages: [String] = []
+    @State var expertises: [String] = []
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -43,7 +35,8 @@ struct ProfessionalItemView: View {
             
             VStack(alignment: .leading) {
                 ForEach(expertises, id: \.self) { expertise in
-                    Text(" \(expertise) ")
+                    Text(expertise)
+                        .padding(4)
                         .background {
                             RoundedRectangle(cornerRadius: 8)
                                 .fill(Color.gray.opacity(0.5))
