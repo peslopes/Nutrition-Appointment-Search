@@ -38,7 +38,8 @@ struct ProfessionalProfileView: View {
                 imageURL: viewModel.professional?.profile_picture_url?.toURL(),
                 rating: viewModel.professional?.rating ?? 0,
                 languages: viewModel.professional?.languages ?? [],
-                expertises: viewModel.professional?.expertise ?? []
+                expertises: viewModel.professional?.expertise ?? [],
+                ratingCount: viewModel.professional?.rating_count ?? 0
             )
             .padding(.horizontal)
             
