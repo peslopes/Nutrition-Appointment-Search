@@ -25,7 +25,7 @@ struct ProfessionalItemView: View {
                     HStack {
                         RatingView(rating: rating, maxRating: LayoutConstants.maxRatings)
                             .frame(height: LayoutConstants.ratingsHeight)
-                        Text("(\(ratingCount))")
+                        Text("\(String(format: "%0.1f", rating))/\(LayoutConstants.maxRatings) (\(ratingCount))")
                     }
                     
                     HStack {
