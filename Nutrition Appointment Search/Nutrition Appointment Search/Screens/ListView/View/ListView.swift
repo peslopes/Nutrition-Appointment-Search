@@ -58,7 +58,8 @@ struct ListView: View {
                     imageURL: professional.profile_picture_url?.toURL(),
                     rating: professional.rating,
                     languages: professional.languages,
-                    expertises: professional.expertise
+                    expertises: professional.expertise,
+                    ratingCount: professional.rating_count
                 )
             })
             
